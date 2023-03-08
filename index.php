@@ -1,1 +1,0 @@
-<?php header('https://web182.noidofbuenavista.click/sas/public/'); ?>
