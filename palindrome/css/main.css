@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Work+Sans&display=swap');
+/*
+font-family: 'Tilt Warp', cursive;
+font-family: 'Work Sans', sans-serif;
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #222;
+  color: #fff;
+  font-family: 'Work Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Tilt Warp', bradley hand, brush script mt, comic sans ms, cursive;
+}
+
+.define {
+  font-size: 1.75rem;
+}
+
+input[type=submit] {
+  background-color: #00cc2c;
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+input[type=reset] {
+  background-color: #616161;
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+a {
+  color: #00fff2;
+}
+
+a:visited {
+  color: #4400ff;
+}
