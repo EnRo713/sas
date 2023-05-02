@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Righteous&display=swap');
+/*
+font-family: 'Quicksand', sans-serif;
+font-family: 'Righteous', cursive;
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Quicksand', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Righteous', bradley hand, brush script mt, comic sans ms, cursive;
+}
+
+header {
+  width: 100%;
+}
+
+ul {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid #000;
+}
