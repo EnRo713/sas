@@ -4,9 +4,9 @@ require_once('../../private/initialize.php');
 
 if(is_post_request()) {
   
-  $name = $_POST['name'] ?? '';
-  $habitat = $_POST['habitat'] ?? '';
-  $description = $_POST['description'] ?? '';
+  $name = h($_POST['name']) ?? '';
+  $habitat = h($_POST['habitat']) ?? '';
+  $description = h($_POST['description']) ?? '';
   
   $result = insert_salamander($name, $habitat, $description);
   $new_id = mysqli_insert_id($db);

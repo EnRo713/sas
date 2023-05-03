@@ -27,13 +27,13 @@ include (SHARED_PATH . '/salamander-header.php');
 <!-- add label -->
 <form action="<?= url_for('salamanders/edit.php?id=' . h(u($id))); ?>" method="post">
     <label for="name">Name</label><br>
-    <input type="text" name="name" value="<?= $salamander['name']; ?>"/><br>
+    <input type="text" name="name" value="<?= h($salamander['name']); ?>"/><br>
     
     <label for="habitat">Habitat</label><br>
-    <textarea id="habitat" name="habitat" rows="6" cols="50"><?= $salamander['habitat']; ?></textarea><br>
+    <textarea id="habitat" name="habitat" rows="6" cols="50"><?= h($salamander['habitat']); ?></textarea><br>
 
     <label for="description">Description</label><br>
-    <textarea id="description" name="description" rows="6" cols="50"><?= $salamander['description']; ?></textarea><br>
+    <textarea id="description" name="description" rows="6" cols="50"><?= h($salamander['description']); ?></textarea><br>
     
     <input type="submit" value="Edit Salamander"/>
 </form>
