@@ -13,6 +13,27 @@ include(SHARED_PATH . '/salamander-header.php');
 
   <a href="<?= url_for('/salamanders/index.php'); ?>">&laquo; Back to List</a>
 
+  <div class="subject show">
+    <h1>Salamander: <?= h($salamander['name']); ?></h1>
+
+    <div class="attributes">
+      <dl>
+        <dt>Name</dt>
+        <dd><?= h($salamander['name']); ?></dd>
+      </dl>
+      <dl>
+        <dt>Habitat</dt>
+        <dd><?= $salamander['habitat']; ?></dd>
+      </dl>
+      <dl>
+        <dt>Description</dt>
+        <dd><?= $salamander['description']; ?></dd>
+      </dl>
+    </div>
+  </div>
+
+</div>
+
    <p> Page ID: <?= h($id); ?> </p>
 
 <?php include(SHARED_PATH . '/salamander-footer.php'); ?>
