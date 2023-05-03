@@ -6,9 +6,9 @@
 
 <html lang="en">
   <head>
-    <title>SAS - <?php echo h($page_title); ?></title>
+    <title>SAS - <?= h($page_title); ?></title>
     <meta charset="utf-8">
-    <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/salamanders.css'); ?>" />
+    <link rel="stylesheet" media="all" href="<?= url_for('/stylesheets/salamanders.css'); ?>" />
   </head>
 
   <body>
