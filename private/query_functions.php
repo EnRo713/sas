@@ -63,19 +63,18 @@ function update_salamander($salamander) {
 }
 
 function delete_salamander($salamander) {
-  if(is_post_request()) {
-    $sql = "DELETE FROM salamander ";
-    $sql .= "WHERE id='" . $id . "' ";
-    $sql .= "LIMIT 1";
+  global $db;
 
-    $result = mysqli_query($db, $sql);
+  $sql = "DELETE FROM salamander ";
+  $sql .= "WHERE id='" . $id . "' ";
+  $sql .= "LIMIT 1";
 
-    if($result) {
-      redirect_to(url_for('/salamanders/index.php'));
-    } else {
-      echo mysqli_error($db);
-      db_disconnect($db);
-      exit;
-    }
+  $result = mysqli_query($db, $sql);
+  if($result) {
+    return true;
+  } else {
+    echo mysqli_error($db);
+    db_disconnect($db);
+    exit;
   }
 }

@@ -17,9 +17,6 @@ include(SHARED_PATH . '/salamander-header.php');
         <th>Name</th>
         <th>Habitat</th>
   	    <th>Desc</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
   	  </tr>
       
       <?php while($salamander = mysqli_fetch_assoc($salamander_set)) { ?>
