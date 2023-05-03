@@ -3,7 +3,6 @@
 require_once('../../private/initialize.php');
 
 if(is_post_request()) {
-  
   $name = h($_POST['name']) ?? '';
   $habitat = h($_POST['habitat']) ?? '';
   $description = h($_POST['description']) ?? '';
