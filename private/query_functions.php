@@ -62,7 +62,7 @@ function update_salamander($salamander) {
   }
 }
 
-function delete_salamander($salamander) {
+function delete_salamander($id) {
   global $db;
 
   $sql = "DELETE FROM salamander ";
