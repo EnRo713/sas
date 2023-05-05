@@ -1,7 +1,7 @@
 <?php
 
-require_once('../../private/initialize.php'); 
-include(SHARED_PATH . '/salamander-header.php');
+require_once('../../private/initialize.php');
+include(SHARED_PATH . '/salamander-header.php'); 
 
 echo "<h1>Stub for Create Salamander</h1>";
 

@@ -1,10 +1,12 @@
+USE dbxqg5etyborxp;
 
 DROP TABLE IF EXISTS salamander;
 CREATE TABLE `salamander` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `habitat` text,
-  `description` text
+  `description` text,
+  PRIMARY KEY(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `salamander` (`id`, `name`, `habitat`, `description` ) VALUES
@@ -14,10 +16,5 @@ INSERT INTO `salamander` (`id`, `name`, `habitat`, `description` ) VALUES
 (4, 'Slimy Salamander', 'Slimy salamanders are entirely terrestrial.  In North Carolina, these salamanders are most abundant in moist forest floor habitats in deciduous forests but may be found in pine forests, bottomland hardwood forests, and caves. ', 'The slimy salamander was formerly considered a single species but has since been divided into a complex of closely related species.  Six of these species may be found in North Carolina but they are often indistinguishable in the field.'),
 (5, 'Green Salamander', 'Green salamanders typically inhabit moist, shady crevices in cliffs and rock faces. In North Carolina, the green salamander is found only in a small mountainous region in the southwestern corner of the state.', 'The green salamander has an unmistakeable lichen-like pattern of green or yellow-green on a dark background. This salamander is laterally flattened and has squared toe tips.');
 
---
--- Indexes for table `salamander`
---
-ALTER TABLE `salamander`
-  ADD PRIMARY KEY (`id`);
-
--- Create a user named sally and grant that user all privileges
+GRANT ALL PRIVILEGES ON salamanders.* TO 'um87bmeeqisao'@'localhost' IDENTIFIED BY ')<d1]3l#f>*1';
+FLUSH PRIVILEGES;

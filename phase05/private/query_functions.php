@@ -12,7 +12,7 @@ function find_all_salamanders() {
 function find_salamander_by_id($id) {
     global $db;
     $sql = "SELECT * FROM salamander ";
-    $sql .="WHERE id=$id";
+    $sql .="WHERE id='" . $id . "'";
     // echo $sql; exit();
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
@@ -21,35 +21,67 @@ function find_salamander_by_id($id) {
     return $salamander;
 }
 
-function insert_salamander($salamander) {
-   global $db;
-    $sql = "INSERT INTO salamander ";
-    $sql .= "(name, habitat, description) ";
-    $sql .= "VALUES(";
-    $sql .= "'" . $salamander['name'] . "', ";
-    $sql .= "'" . $salamander['habitat'] . "', ";
-    $sql .= "'" . $salamander['description'] . "'";
-    $sql .= ")";
-    $result = mysqli_query($db, $sql);
+function validate_salamander($salamander) {
+  $errors = [];
+  
+  if(is_blank($salamander['name'])) {
+    $errors[] = "Name cannot be blank.";
+  } elseif(!has_length($salamander['name'], ['min' => 2, 'max' => 255])) {
+    $errors[] = "Name must be between 2 and 255 characters.";
+  }
 
-    if($result) {
-        return true;
-    } else {
-        echo mysqli_error($db);
-        db_disconnect($db);
-        exit();
-    }
+  if(is_blank($salamander['habitat'])) {
+    $errors[] = "Habitat cannot be blank.";
+  }
+
+  if(is_blank($salamander['description'])) {
+    $errors[] = "Description cannot be blank.";
+  }
+  
+  return $errors;
+}
+
+function insert_salamander($salamander) {
+  global $db;
+
+  $errors = validate_salamander($salamander);
+  if(!empty($errors)) {
+    return $errors;
+  }
+
+  $sql = "INSERT INTO salamander ";
+  $sql .= "(name, habitat, description) ";
+  $sql .= "VALUES(";
+  $sql .= "'" . $salamander['name'] . "', ";
+  $sql .= "'" . $salamander['habitat'] . "', ";
+  $sql .= "'" . $salamander['description'] . "'";
+  $sql .= ")";
+  $result = mysqli_query($db, $sql);
+
+  if($result) {
+    return true;
+  } else {
+    echo mysqli_error($db);
+    db_disconnect($db);
+    exit();
+  }
 }
 
 function update_salamander($salamander) {
     global $db;
+
+    $errors = validate_salamander($salamander);
+    if(!empty($errors)) {
+      return $errors;
+    }
+
     $sql = "UPDATE salamander SET ";
     $sql .= "name='" .  $salamander['name'] . "', ";
     $sql .= "habitat='" .  $salamander['habitat'] . "',";
     $sql .= "description='" .  $salamander['description'] . "' ";
     $sql .= "WHERE id='" . $salamander['id'] . "' ";
     $sql .= "LIMIT 1";
-  
+
     $result = mysqli_query($db, $sql);
     if($result) {
         return true;

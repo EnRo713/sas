@@ -13,7 +13,7 @@
 
   <body>
     <header>
-      <h1><a href="<?= url_for('/'); ?>">Southern Appalachian Salamanders (SAS)</a></h1>
+      <h1><a href="<?= url_for('../'); ?>">Southern Appalachian Salamanders (SAS)</a></h1>
     </header>
     <navigation>
       <ul>

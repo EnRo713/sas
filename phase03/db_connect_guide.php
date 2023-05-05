@@ -4,16 +4,16 @@
 // of database interaction using PHP.
 
 // echo "SERVER NAME: " . $_SERVER['SERVER_NAME'];
-if ($_SERVER['SERVER_NAME'] == 'web182.noidofbuenavista.click') {
-  $dbhost = 'localhost';
-  $dbuser = 'um87bmeeqisao';
-  $dbpass = ')<d1]3l#f>*1';
-  $dbname = 'db7hvrvpgebgpl';
-} else {
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
   $dbhost = 'localhost';
   $dbuser = 'web182_user';
   $dbpass = 'password';
   $dbname = 'globe_bank';
+} elseif ($_SERVER['SERVER_NAME'] == 'web182.noidofbuenavista.click') {
+  $dbhost = 'localhost';
+  $dbuser = 'um87bmeeqisao';
+  $dbpass = ')<d1]3l#f>*1';
+  $dbname = 'db7hvrvpgebgpl';
 }
 
 // 1. Create a database connection

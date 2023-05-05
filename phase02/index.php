@@ -1,5 +1,1 @@
-<?php
-
-header('Location: https://web182.noidofbuenavista.click/sas/index.php');
-
-?>
+<?php header('Location: public/'); ?>

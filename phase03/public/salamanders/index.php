@@ -18,9 +18,6 @@ include(SHARED_PATH . '/salamander-header.php');
     <th>Name</th>
     <th>Habitat</th>
     <th>Desc</th>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
   </tr>
 
       <?php while($salamander = mysqli_fetch_assoc($salamander_set)) { ?>
@@ -36,6 +33,6 @@ include(SHARED_PATH . '/salamander-header.php');
       <?php } ?>
   	</table>
   <?php mysqli_free_result($salamander_set); ?>
-  Thanks to <a href="https://herpsofnc.org">Ampibians and Reptiles of North Carolina</a>
+  Thanks to <a href="https://herpsofnc.org">Amphibians and Reptiles of North Carolina</a>
 
 <?php include(SHARED_PATH . '/salamander-footer.php'); ?>
